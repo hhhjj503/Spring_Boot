@@ -12,16 +12,16 @@ public class NoticeController {
 	@GetMapping("list")
 	public String list(Model model) {
 		model.addAttribute("test","hello devTools");
-		return "admin/board/notice/list";
+		return "admin.board.notice.list";
 	}
-	  
+	   
 	@GetMapping("detail")
 	public String detail() {
-		return "admin/board/notice/detail";
+		return "admin.board.notice.detail";
 	}
-	
+	  
 	@GetMapping("reg")
 	public String reg() {
-		return "admin/board/notice/reg";
+		return "admin.board.notice.reg";
 	}
 }

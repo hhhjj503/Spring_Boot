@@ -1,15 +1,19 @@
 package com.newlec.web.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
+@Controller
 public class HomeController {
 	
-	@RequestMapping("/index")
-	public String asdf() {
-		return "hello! Spring Boot!";
+	@GetMapping("/index")
+	public String index() {
+		return "home.index";
 	}
 	
+	@GetMapping("/help")
+	public String help() {
+		return "home.help";
+	}
 	
  }

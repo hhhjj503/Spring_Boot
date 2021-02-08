@@ -12,12 +12,12 @@ public class NoticeController {
 	@GetMapping("list")
 	public String list(Model model) {
 		model.addAttribute("test","hello devTools");
-		return "customer/notice/list";
+		return "customer.notice.list";
 	}
 	  
-	@GetMapping("detail")
+	@GetMapping("detail") 
 	public String detail() {
-		return "customer/notice/detail";
+		return "customer.notice.detail";
 	}
 	
 }

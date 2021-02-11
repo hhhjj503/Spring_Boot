@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.newlec.web.entity.Notice;
+import com.newlec.web.entity.NoticeView;
 import com.newlec.web.service.NoticeService;
 
 @Controller
@@ -20,7 +20,11 @@ public class NoticeController {
 	
 	@RequestMapping("list")
 	public String list(Model model) {
-		List<Notice> list = service.getList();
+		
+		int page = 2;
+		String field = "title";
+		String query = "";
+		List<NoticeView> list = service.getList(page,field,query);
 		
 		model.addAttribute("test","hello devTools");
 		model.addAttribute("list",list);

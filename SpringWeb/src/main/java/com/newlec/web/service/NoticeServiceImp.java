@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.newlec.web.entity.Notice;
+import com.newlec.web.entity.NoticeView;
 import com.newlec.web.sdao.NoticeDao;
 
 @Service
@@ -15,8 +16,11 @@ public class NoticeServiceImp implements NoticeService {
 	private NoticeDao noticeDao;
 
 	@Override
-	public List<Notice> getList() {
-		List<Notice> list = noticeDao.getList();
+	public List<NoticeView> getList(int page, String field, String query) {
+		
+		int size = 10;
+		int offset = 0+(page-1)*size;
+		List<NoticeView> list = noticeDao.getList(size, field, query, offset);
 		return list;
 	}
 

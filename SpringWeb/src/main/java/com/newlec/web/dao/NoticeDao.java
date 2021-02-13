@@ -1,4 +1,4 @@
-package com.newlec.web.sdao;
+package com.newlec.web.dao;
 
 import java.util.List;
 
@@ -13,11 +13,11 @@ import com.newlec.web.entity.NoticeView;
 @Mapper
 public interface NoticeDao {
 	
-	@Results({@Result(property = "memberName", column = "Member_Name")}) //여러개일때는 results 배열사용
-	@Select("SELECT * FROM NOTICEVIEW  where ${field} like '%${query}%' order by ID DESC limit ${offset},${size};")
 	List<NoticeView> getList(int size, String field, String query, int offset);
 	
-	
 	Notice get(int id);
-
+	
+	int update(Notice notice);
+	int insert(Notice notice);
+	int delete(int id);
 }

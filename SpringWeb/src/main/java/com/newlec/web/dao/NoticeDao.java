@@ -13,11 +13,18 @@ import com.newlec.web.entity.NoticeView;
 @Mapper
 public interface NoticeDao {
 	
-	List<NoticeView> getList(int size, String field, String query, int offset);
+	List<NoticeView> getViewList(int size, String field, String query, int offset);
+	int getCount(String field, String query);
 	
 	Notice get(int id);
-	
 	int update(Notice notice);
 	int insert(Notice notice);
 	int delete(int id);
+	Notice getPrev(int id);
+	Notice getNext(int id);	
+
+	int updatePubAll(int[] pubs, int[] closes);
+	int delAll(int[] ids);
+
+	
 }
